@@ -17,8 +17,7 @@ Then, simply run with `Python talos_ioc_extractor.py`
 In the following Demo, I feed the tool with a valid url from Talos Blog (any blog whose title starts with "Threat Roundup")
 and the tool extracts the IOC hashes from the blog.
 
-![Alt Text](https://github.com/Balzu/email_scraper/blob/main/demo.gif)
-
+![Alt Text](https://github.com/Balzu/BOSS/tools/boss #1 - Threat Hunting Security Automation with Python, Selenium and Cisco Talos Blog/demo.gif)
 
 ### Blog Post
 
