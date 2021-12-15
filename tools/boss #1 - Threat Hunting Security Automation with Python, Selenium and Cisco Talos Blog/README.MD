@@ -23,7 +23,7 @@ and the tool extracts the IOC hashes from the blog.
 ### Blog Post
 
 There is an associated blog post, where I better explain some technical details.
-Take a look [here!](http://thebytemachine.com/security_automation_with_python_selenium_and_talos_blogs)
+Take a look [here!](http://thebytemachine.com/security_automation_with_python_selenium_and_talos_blog)
 
 ### What's next?
 
