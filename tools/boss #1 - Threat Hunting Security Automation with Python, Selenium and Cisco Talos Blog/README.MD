@@ -12,13 +12,6 @@ All the code is packed inside a Python script, so you basically need to download
 the *selenium* module is installed (`pip install selenium`). 
 Then, simply run with `Python talos_ioc_extractor.py`
 
-
-### Demo
-In the following Demo, I feed the tool with a valid url from Talos Blog (any blog whose title starts with "Threat Roundup")
-and the tool extracts the IOC hashes from the blog.
-
-![Alt Text](https://github.com/Balzu/BOSS/blob/main/tools/boss%20%231%20-%20Threat%20Hunting%20Security%20Automation%20with%20Python%2C%20Selenium%20and%20Cisco%20Talos%20Blog/demo.gif)
-
 ### Blog Post
 
 There is an associated blog post, where I better explain some technical details.
@@ -29,3 +22,10 @@ Take a look [here!](http://thebytemachine.com/security_automation_with_python_se
 - Once the IOC are programmatically extracted, you may want to continue the automation by feeding them to your Cyber Security platform 
   (do you have REST APIs?)
 - We can simply extend the script to parse and extract malicious domains and IP addresses (good exercise!)
+
+
+### Demo
+In the following Demo, I feed the tool with a valid url from Talos Blog (any blog whose title starts with "Threat Roundup")
+and the tool extracts the IOC hashes from the blog.
+
+![Alt Text](https://github.com/Balzu/BOSS/blob/main/tools/boss%20%231%20-%20Threat%20Hunting%20Security%20Automation%20with%20Python%2C%20Selenium%20and%20Cisco%20Talos%20Blog/demo.gif)
