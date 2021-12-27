@@ -10,8 +10,8 @@ in order to extract valuable threat hunting information from open-source cyberse
 ### How to Run
 All the code is packed inside a Python script, so you basically need to download [Python 3](https://www.python.org/downloads/), and to ensure that 
 the *selenium* module is installed (`pip install selenium`). 
-Since the Talos blog page is dinamically loaded via Javascript, si ply downloading the raw HTML wonìt be sufficient to download the data we are interested in. Intead, we will use Chrome to run the javascript and build the functional HTML page on our behalf. To link Chrome execution to our python script we will need WebDriver, an open source tool for the automated testing of web apps. You can download it from [here](https://chromedriver.chromium.org/home). Then, the webdriver should be in PATH in order to be executable. The easiest way is to copy it in the same folder of your script
-Then, simply run with `Python talos_ioc_extractor.py`
+Since the Talos blog page is dinamically loaded via Javascript, si ply downloading the raw HTML won't be sufficient to download the data we are interested in. Instead, we will use Chrome to run the javascript and build the functional HTML page on our behalf. To link Chrome execution to our python script we will need WebDriver, an open source tool for the automated testing of web apps. You can download it from [here](https://chromedriver.chromium.org/home). Then, the webdriver should be in PATH in order to be executable. The easiest way is to copy it in the same folder of your script.
+Finally, simply run with `Python talos_ioc_extractor.py`
 
 ### Blog Post
 
