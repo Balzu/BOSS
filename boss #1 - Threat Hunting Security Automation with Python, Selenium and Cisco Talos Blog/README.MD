@@ -29,4 +29,4 @@ Take a look [here!](http://thebytemachine.com/security_automation_with_python_se
 In the following Demo, I feed the tool with a valid url from Talos Blog (any blog whose title starts with "Threat Roundup")
 and the tool extracts the IOC hashes from the blog.
 
-![Alt Text](https://github.com/Balzu/BOSS/blob/main/tools/boss%20%231%20-%20Threat%20Hunting%20Security%20Automation%20with%20Python%2C%20Selenium%20and%20Cisco%20Talos%20Blog/demo.gif)
+![Alt Text](https://github.com/Balzu/BOSS/blob/main/boss%20%231%20-%20Threat%20Hunting%20Security%20Automation%20with%20Python%2C%20Selenium%20and%20Cisco%20Talos%20Blog/demo.gif)
