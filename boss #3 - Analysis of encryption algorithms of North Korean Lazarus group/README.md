@@ -1,5 +1,4 @@
-Analysis of two encryption algorithms of the Lazarus group
-==========================================================
+# Analysis of two encryption algorithms of the Lazarus group
 
 ### _In this blog, I will analyze the encryption capabilities of a malware sample attributed to the North Korean APT group known as Hidden Cobra, or Lazarus._
 
@@ -9,7 +8,7 @@ Analysis of two encryption algorithms of the Lazarus group
 </p>
 
 
-**Introduction**  
+## Introduction
   
 In this blog, we will analyze the encryption capabilities of a malware sample attributed to the North Korean APT group known as **Hidden Cobra**. In particular, we will focus on its encryption capabilities, and we will analyze in deep the two encryption algorithms used by this sample.  
   
@@ -27,7 +26,7 @@ Also, the authors mention the two encryption algorithms that we discuss later: t
   
 In this [**blog post**](https://blogs.infoblox.com/cyber-threat-intelligence/cyber-threat-advisory/cyber-threat-advisory-hidden-cobra-applejeus-cryptocurrency-threats/) instead the authors track the evolution of the AppleJeus malware, highlighting its characteristics trough seven different versions.  
   
-**Analysis of the sample**  
+## Analysis of the sample
   
 I will start with a basic static analysis of the PE header and then I will proceed with an advanced static analysis using IDA Pro. I will show only relevant parts and I will alternate between static and dynamic analysis with the debugger when this will help to clarify concepts.  
   
@@ -222,7 +221,7 @@ Just to show an example, here it is an iteration of the sample querying the regi
 </p>   
 
 
-**Encryption #1: XOR-based**  
+## Encryption #1: XOR-based
   
 The next interesting functionality is the first encryption algorithm:  
   
@@ -294,7 +293,7 @@ This encryption is **invertible**, since:
   
 \- we know that XOR operation is invertible  
   
-**Communication with C2 Server**  
+## Communication with C2 Server
   
 The next interesting thing is the communication with the command-and-control server.  
   
@@ -346,7 +345,7 @@ After that, if the sample receives a successful response from the C2 server, it 
 
 Then, RC4 algorithm is used to decode the data received from the C2 server.  
   
-**Encryption #2: RC4**  
+## Encryption #2: RC4
   
 RC4 is a stream cipher encryption algorithm, that is a _symmetric key cipher where plaintext digits are combined with a pseudorandom cipher digit stream (keystream). In a stream cipher, each plaintext digit is encrypted one at a time with the corresponding digit of the keystream, to give a digit of the ciphertext stream_ ([Wikipedia](https://en.wikipedia.org/wiki/Stream_cipher)).  
   
@@ -361,7 +360,7 @@ So, there are two main components involved in this algorithm: the Key-Scheduling
   
 Now we will take a look at the pseudocode of these two algorithms and we will try to match them with the reversed code from IDA.  
   
-**Key-scheduling algorithm (KSA)**  
+## Key-scheduling algorithm (KSA)
   
 This is the pseudocode of the KSA:
 
@@ -415,7 +414,7 @@ The swap operation (line 7) is shown in figure 31. **EDX** and **EAX** registers
 </p>  
   
 
-**Pseudo-Random Generation Algorithm (PRGA)**  
+## Pseudo-Random Generation Algorithm (PRGA) 
   
 IDA disassembles the PRGA in another block (KSA is implemented by function _sub\_D22C00_, while PRGA is implemented by function _sub\_D22D40_).  
 The pseudocode for PRGA is shown in figure 32:  
@@ -492,7 +491,7 @@ The only thing that I want to add is that this sample does not worry too much ab
 
   
 
-**Conclusion**  
+## Conclusions
   
 We deeply analyzed a sample attributed by CISA to the Lazarus group, mainly focusing on its encryption capabilities.  
   
@@ -502,14 +501,15 @@ We saw that the sample implements two custom encryption algorithms:
   
 Although resources about this sample already exist (notably the one from CISA), the aim of this blog is to provide a much more detailed analysis about the encryption algorithms used by the Lazarus group, analyzing them in depth and explaining all the relevant parts in the disassembled code.  
   
-**Indicators of Compromise**  
+## Indicators of Compromise
   
 You can refer to [CISA IOCs](https://www.cisa.gov/sites/default/files/publications/MAR-10322463-1.v1.WHITE_stix.xml) (stix format).  
   
-**References**  
+## References
 
 #### 
 
+*   [Blog post on thebytemachine.com](https://thebytemachine.com/analysis_of_encryption_algs_used_by_north_korean_group_lazarus)
 *   [CISA Report](https://www.cisa.gov/news-events/analysis-reports/ar21-048a)
 *   [Apple Jeus versions](https://blogs.infoblox.com/cyber-threat-intelligence/cyber-threat-advisory/cyber-threat-advisory-hidden-cobra-applejeus-cryptocurrency-threats/)
 *   [Microsoft Developer Network](https://learn.microsoft.com/en-us/windows/win32/)
