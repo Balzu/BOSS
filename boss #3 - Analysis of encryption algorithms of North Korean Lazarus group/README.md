@@ -1,4 +1,4 @@
-# Analysis of two encryption algorithms of the Lazarus group
+# Analysis of two encryption algorithms used by the Lazarus group
 
 ### _In this blog, I will analyze the encryption capabilities of a malware sample attributed to the North Korean APT group known as Hidden Cobra, or Lazarus._
 
